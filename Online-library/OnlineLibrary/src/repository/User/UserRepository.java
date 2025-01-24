@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class UserRepository implements IUserRepository {
 
-    private final IDBConnection db;  // Dependency Injection
+    private final IDBConnection db;  
 
     public UserRepository(IDBConnection db) {
         this.db = db;
