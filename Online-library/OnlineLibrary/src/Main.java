@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        IDBConnection db = new DBConnection("jdbc:postgresql://localhost:5432", "postgres", "root", "LibraryDB");
+        IDBConnection db = new DBConnection("jdbc:postgresql://localhost:5432", "postgres", "0000", "OnlineLibrary");
         IUserRepository repo = new UserRepository(db);
         IUserController controller = new UserController(repo);
 
