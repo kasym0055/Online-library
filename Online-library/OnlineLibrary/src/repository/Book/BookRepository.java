@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class BookRepository implements IBookRepository {
 
-    private final IDBConnection db;  // Dependency Injection
+    private final IDBConnection db;  
 
     public BookRepository(IDBConnection db) {
         this.db = db;
@@ -29,18 +29,16 @@ public class BookRepository implements IBookRepository {
 
 
     public void issueBook(int bookId, int userId) {
-        //String checkQuery = "SELECT is_available FROM Books WHERE id = ?";
+    
         String issueQuery = "INSERT INTO Issued_Books (book_id, user_id, issue_date) VALUES (?, ?, CURRENT_DATE)";
 
         try (Connection conn = db.getConnection();
-             //PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+             
              PreparedStatement issueStmt = conn.prepareStatement(issueQuery)){
 
-            // Проверяем доступность книги
-            //checkStmt.setInt(1, bookId);
-            //ResultSet rs = checkStmt.executeQuery();
+            
 
-                // Выдаем книгу
+               
                 issueStmt.setInt(1, bookId);
                 issueStmt.setInt(2, userId);
                 issueStmt.executeUpdate();
