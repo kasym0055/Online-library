@@ -14,19 +14,25 @@ public class UserController implements IUserController{
     }
 
     @Override
-    public String register(String name, String surname) {
-        User user = new User(name,surname);
+    public String register(String name, String email, String password) {
+        User user = new User(name, email, password);
 
         boolean created = repo.register(user);
 
         return (created ? "User was created!" : "User creation was failed!");
     }
 
+
     @Override
     public String getUser(int id) {
         User user = repo.getUser(id);
 
         return (user == null ? "User was not found!" : user.toString());
+    }
+
+    @Override
+    public boolean validateUser(String email, String password) {
+        return repo.validateUser(email, password);
     }
 
 }

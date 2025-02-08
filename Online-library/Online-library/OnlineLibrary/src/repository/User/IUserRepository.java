@@ -4,6 +4,6 @@ import src.models.User;
 
 public interface IUserRepository {
     Boolean register(User user);
-    void login();
+    boolean validateUser(String email, String password);
     User getUser(int id);
 }
