@@ -13,18 +13,18 @@ public class BookController implements IBookController {
         this.repo = repo;
     }
 
-    // Метод для добавления книги
+    
     public void addBook(String title, String author) {
         if (title == null || title.isEmpty() || author == null || author.isEmpty()) {
             System.out.println("Ошибка: Название и автор книги не могут быть пустыми!");
             return;
         }
 
-        Book book = new Book(title, author); // ID и доступность книги
+        Book book = new Book(title, author); 
         repo.create(book);
     }
 
-    // Метод для выдачи книги
+    
     public void issueBook(int bookId, int userId) {
         if (bookId <= 0 || userId <= 0) {
             System.out.println("Ошибка: ID книги и пользователя должны быть положительными числами!");
@@ -34,7 +34,7 @@ public class BookController implements IBookController {
         repo.issueBook(bookId, userId);
     }
 
-    // Метод для просмотра всех книг
+    
     public List<String> viewBooks() {
         return repo.viewBooks();
     }
