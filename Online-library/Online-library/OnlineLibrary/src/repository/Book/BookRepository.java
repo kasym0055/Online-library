@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BookRepository implements IBookRepository {
 
-    private final IDBConnection db;  // Dependency Injection
+    private final IDBConnection db;  
 
     public BookRepository(IDBConnection db) {
         this.db = db;
@@ -42,7 +42,7 @@ public class BookRepository implements IBookRepository {
             //checkStmt.setInt(1, bookId);
             //ResultSet rs = checkStmt.executeQuery();
 
-            // Выдаем книгу
+            
             issueStmt.setInt(1, bookId);
             issueStmt.setInt(2, userId);
             issueStmt.executeUpdate();
