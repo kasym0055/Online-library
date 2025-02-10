@@ -38,7 +38,7 @@ public class BookRepository implements IBookRepository {
              //PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
              PreparedStatement issueStmt = conn.prepareStatement(issueQuery)){
 
-            // Проверяем доступность книги
+            
             //checkStmt.setInt(1, bookId);
             //ResultSet rs = checkStmt.executeQuery();
 
