@@ -39,7 +39,7 @@ public class BookController implements IBookController {
         return repo.viewBooks();
     }
 
-    // Метод для получения книги по ID
+    
 //    public void getBookById(int bookId) {
 //        Optional<Book> book = repo.findById(bookId); // Требуется метод findById в IBookRepository
 //        if (book.isPresent()) {
