@@ -31,16 +31,15 @@ public class BookRepository implements IBookRepository {
 
 
     public void issueBook(int bookId, int userId) {
-        //String checkQuery = "SELECT is_available FROM Books WHERE id = ?";
+        
         String issueQuery = "INSERT INTO Issued_Books (book_id, user_id, issue_date) VALUES (?, ?, CURRENT_DATE)";
 
         try (Connection conn = db.getConnection();
-             //PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+             
              PreparedStatement issueStmt = conn.prepareStatement(issueQuery)){
 
             
-            //checkStmt.setInt(1, bookId);
-            //ResultSet rs = checkStmt.executeQuery();
+            
 
             
             issueStmt.setInt(1, bookId);
