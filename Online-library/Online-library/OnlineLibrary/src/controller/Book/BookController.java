@@ -41,7 +41,7 @@ public class BookController implements IBookController {
 
     
 //    public void getBookById(int bookId) {
-//        Optional<Book> book = repo.findById(bookId); // Требуется метод findById в IBookRepository
+//        Optional<Book> book = repo.findById(bookId); 
 //        if (book.isPresent()) {
 //            System.out.println("Книга найдена: " + book.get());
 //        } else {
